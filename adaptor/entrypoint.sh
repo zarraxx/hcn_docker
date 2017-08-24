@@ -36,7 +36,7 @@ sed -i 's/${multiHospital_adapter_server}/'$ADAPTER_SERVERS'/g' src/main/resourc
 mvn clean package -Dmaven.test.skip=true -P$PROFILE
 
 rm -rf /usr/local/tomcat/webapps/hcn*
-cp target/hcn-adapter-1.0.war /usr/local/tomcat/webapps/hcn-adapter
+cp target/hcn-adapter-1.0.war /usr/local/tomcat/webapps/hcn-adapter.war
 
 cd -
 exec "$@"
