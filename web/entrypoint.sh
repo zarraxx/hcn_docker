@@ -32,6 +32,7 @@ sed -i 's/${HOST_IP}/'$HOST_IP'/g' src/main/resources/package/docker/docker-slav
 
 mvn clean package -Dmaven.test.skip=true -P$PROFILE
 
+rm -rf /usr/local/tomcat/webapps/hcn-web*
 cp target/hcn-web-0.1.war /usr/local/tomcat/webapps/hcn-web.war
 
 cd -
