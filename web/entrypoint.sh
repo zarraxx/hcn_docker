@@ -18,6 +18,8 @@ export GIT_URL
 export HOST_IP
 
 mkdir -p /tmp/war/build
+rm -rf /tmp/war/build
+mkdir -p /tmp/war/build
 
 cd /tmp/war/build
 
