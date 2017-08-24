@@ -5,6 +5,9 @@ if [ ! -n "$HOST_IP" ]; then
   HOST_IP=`/sbin/ip route|awk '/scope/ { print $9 }'`
 fi
 
+if [ ! -n "$ADAPTER_SERVERS" ]; then
+  ADAPTER_SERVERS="tcp://55.8.0.155:9003?codec=hessian&amp;orgId=2f8c1eec-79a4-4785-acf6-69b357113789"
+fi
 
 if [ ! -n "$GIT_URL" ]; then
   GIT_URL='http://hcn:hcn@172.16.5.35/gogs/hcn/hcn-adapter.git'
@@ -33,7 +36,7 @@ sed -i 's/${multiHospital_adapter_server}/'$ADAPTER_SERVERS'/g' src/main/resourc
 mvn clean package -Dmaven.test.skip=true -P$PROFILE
 
 rm -rf /usr/local/tomcat/webapps/hcn*
-cp target/*.war /usr/local/tomcat/webapps/
+cp target/hcn-adapter-1.0.war /usr/local/tomcat/webapps/hcn-adapter
 
 cd -
 exec "$@"
