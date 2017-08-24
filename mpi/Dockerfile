@@ -13,8 +13,7 @@ ADD start.sh /usr/local/opt/hcn-mpi-1.0/start.sh
 
 RUN chmod +x /usr/local/opt/entryPoint.sh && chmod +x /usr/local/opt/hcn-mpi-1.0/start.sh
 
-ENV ZK_HOST  ZK
-ENV ZK_PORT  2181
+ENV ZK_HOST  ZK:2181
 ENV RPC_SERVER 127.0.0.1:9003
 ENV REDIS_HOST REDIS
 ENV REDIS_PORT 6379
