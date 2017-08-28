@@ -15,4 +15,4 @@ for file in $filelist
  		classpath=${classpath}':lib/'${file}
 	done
 
-java  -Duser.dir=$workDir -cp $classpath hcn.mpi.runtime.Main > ${workDir}"/logs/server.log"
+java  -Duser.dir=$workDir -cp $classpath hcn.mpi.runtime.Main
